@@ -142,6 +142,9 @@ var customObj = {
 output application/json
 ---
 {
+	"collection": customObj filterObject ((value) -> 
+		sizeOf(value) > 6
+	)
 }]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
@@ -527,7 +530,11 @@ output application/json
 "prices": booksList.book.*price[?($>15)]
 
 //? - validates if the key "price" exists
-// and if exists, ckecks if value > 15]]></ee:set-payload>
+// and if exists, ckecks if value > 15
+
+
+
+]]></ee:set-payload>
 			</ee:message>
 		</ee:transform>
 	</flow>
